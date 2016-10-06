@@ -1,0 +1,9 @@
+
+# Provide values for tag and description.  It is helpful but not required that the tag is unique.
+
+type: hazard
+version: 1.0
+date:
+code:
+tag:
+description:

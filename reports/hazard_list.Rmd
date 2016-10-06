@@ -1,0 +1,17 @@
+---
+title: "Hazards"
+output: html_document
+---
+
+```{r, echo=FALSE}
+toc = yaml::yaml.load_file("../index.yaml")
+
+hazard_list = lapply(toc$hazards, function(fn) {
+  yaml::yaml.load_file(paste0("../hazards/", fn))
+})
+
+knitr::kable(dplyr::data_frame(Code        = lapply(hazard_list, function(hazard) { hazard$code }),
+                               Tag         = lapply(hazard_list, function(hazard) { hazard$tag }),
+                               Description = lapply(hazard_list, function(hazard) { hazard$description })))
+```
+

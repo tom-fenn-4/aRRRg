@@ -1,0 +1,7 @@
+
+# TOC for requirements system
+
+hazards:
+  - hazard1.yaml
+  - hazard2.yaml
+risks:
