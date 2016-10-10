@@ -1,0 +1,44 @@
+---
+title: "Initial Risk Assessment"
+output: html_document
+---
+
+```{r, echo=FALSE}
+toc = yaml::yaml.load_file("../index.yaml")
+library(dplyr, warn.conflicts = FALSE)
+```
+
+```{r, echo = FALSE}
+hazard_list = lapply(toc$hazards, function(fn) {
+  yaml::yaml.load_file(paste0("../hazards/", fn))
+})
+
+hazards = data.frame(Code        = sapply(hazard_list, function(hazard) { hazard$code }),
+                     Tag         = sapply(hazard_list, function(hazard) { hazard$tag }),
+                     Description = sapply(hazard_list, function(hazard) { hazard$description }),
+                     stringsAsFactors = FALSE)
+
+```
+
+```{r, echo=FALSE}
+risk_list = lapply(toc$risks, function(fn) {
+  yaml::yaml.load_file(paste0("../risks/", fn))
+})
+
+risks = data.frame(Hazard      = sapply(risk_list, function(risk) { risk$hazard }),
+                   Code        = sapply(risk_list, function(risk) {risk$code }),
+                   Scenario    = sapply(risk_list, function(risk) {risk$scenario }),
+                   Severity    = sapply(risk_list, function(risk) {risk$severity }),
+                   Probability = sapply(risk_list, function(risk) {risk$probability }),
+                   Tolerance   = sapply(risk_list, function(risk) {risk$tolerance }),
+                   stringsAsFactors = FALSE)
+
+```
+
+```{r, echo=FALSE}
+right_join(risks, hazards, by = c("Hazard" = "Code")) %>% 
+  mutate(Risk = paste0(Hazard, " ", Code)) %>% 
+  select(Risk, Tag, Description, Scenario, Severity, Probability, Tolerance) %>% {
+    knitr::kable(.)
+    }
+```

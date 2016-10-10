@@ -1,0 +1,14 @@
+
+# risks that reault from hazards
+
+type: risk
+version: 1.0
+date:
+hazard: A
+code: 2
+scenario: API is contaminated with a starting material at levels that can cause nausea and vomiting
+severity: 2
+severity_comments: very unpleasant but acute with no long term consequences
+probability: 3
+probability_comments:
+tolerance: 1

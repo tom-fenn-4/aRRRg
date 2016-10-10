@@ -5,3 +5,7 @@ hazards:
   - hazard1.yaml
   - hazard2.yaml
 risks:
+  - risk1.yaml
+  - risk2.yaml
+  - risk3.yaml
+  - risk4.yaml

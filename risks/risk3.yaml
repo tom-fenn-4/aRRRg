@@ -1,0 +1,14 @@
+
+# risks that reault from hazards
+
+type: risk
+version: 1.0
+date:
+hazard: B
+code: 1
+scenario: Excipient contains high levels of microbials
+severity: 4
+severity_comments: depends strongly on patient subpopulation
+probability: 3
+probability_comments: hard to control through sourcing controls
+tolerance: 2

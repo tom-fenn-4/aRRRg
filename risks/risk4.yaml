@@ -1,0 +1,15 @@
+
+# risks that reault from hazards
+
+type: risk
+version: 1.0
+date:
+hazard: B
+code: 2
+scenario: leachables from excipient drive accelerated degradation of API and result in unqualified levels of
+    degradation product that is toxic.
+severity: 3
+severity_comments:
+probability: 3
+probability_comments: Need to conduct product stress testing and extractables profile
+tolerance: 2

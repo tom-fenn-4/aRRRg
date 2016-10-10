@@ -1,0 +1,14 @@
+
+# risks that reault from hazards
+
+type: risk
+version: 1.0
+date:
+hazard: A
+code: 1
+scenario: patient receives a 2x overdose of the API resulting in cardiac arrest
+severity: 5
+severity_comments: death is bad
+probability: 2
+probability_comments: outside of misuse, it is essentially impossible for the patch to deliver double the normal dose
+tolerance: 2
